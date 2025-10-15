@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html data-lt-installed="true">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Wiyrchujmy</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hyperaudio/hyperaudio-lite/css/hyperaudio-lite-player.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.js"></script>
+  <script src="https://platform.twitter.com/widgets.js"></script>
+  <style>
+
+    .hyperaudio-transcript .active {
+      background-color: #efefef;
+    }
+
+    .hyperaudio-transcript .active > .active {
+      color: rgb(255, 0, 55);
+      /*transition: color 0.5s ease;*/
+    }
+
+    #popover {
+      position: absolute;
+      background-color: #f9f9f9;
+      
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 1;
+      font-size: small;
+      font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+    }
+
+    #popover a {
+      text-decoration: none; 
+      color: #303030;
+      cursor: pointer;
+    }
+
+    #clipboard-text {
+      font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace; 
+    }
+
+    #clipboard-confirm {
+      font-size: medium;
+    }
+    
+  </style>
+</head>
+<body>
+  <p>
+    </p><form id="searchForm" style="float:right">
+      <!-- comment out the following line if you don't need playback rate controls -->
+      Playback Rate <span id="currentPbr">1</span><input id="pbr" type="range" value="1" min="0.5" max="3" step="0.1" style="width:10%">
+      <input id="search" type="text"><input type="submit" value="search">
+    </form>
+  <p></p>
+
+  <!-- Comment out the following line if you are using an alternative player. ie SoundCloud or YouTube -->
+  <audio id="hyperplayer" class="hyperaudio-player" style="z-index: 5000000; position:relative; width:400px" controls="controls" src="wiyrchujmy.mp3">
+  </audio>
+
+  <div id="popover" style="display: none;"><a id="popover-btn">Copy to clipboard <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="-130 -110 600 600"><path d="m161,152.9h190c0.1,0 0.1,0 0.2,0 10.8,0 19.6-7.1 19.6-16 0-1.5-14.1-82.7-14.1-82.7-1.3-7.9-9.6-13.8-19.4-13.8l-61.7,.1v-13.5c0-8.8-8.8-16-19.6-16-10.8,0-19.6,7.1-19.6,16v13.6l-61.8,.1c-9.8,0-18,5.9-19.4,13.8l-13.7,80.3c-1.2,14.3 13.5,18.1 19.5,18.1z" fill="currentcolor"></path><path d="m427.5,78.9h-26.8c0,0 9.3,53.5 9.3,58 0,30.4-26.4,55.2-58.8,55.2h-190.2c-19.6,0.4-63.3-14.7-58.1-63.9l8.4-49.2h-26.8c-10.8,0-19.6,8.8-19.6,19.6v382.9c0,10.8 8.8,19.6 19.6,19.6h343c10.8,0 19.6-8.8 19.6-19.6v-383c0-10.8-8.8-19.6-19.6-19.6zm-76.5,320.1h-190c-10.8,0-19.6-8.8-19.6-19.6 0-10.8 8.8-19.6 19.6-19.6h190c10.8,0 19.6,8.8 19.6,19.6 0,10.8-8.7,19.6-19.6,19.6zm0-110.3h-190c-10.8,0-19.6-8.8-19.6-19.6 0-10.8 8.8-19.6 19.6-19.6h190c10.8,0 19.6,8.8 19.6,19.6 0,10.8-8.7,19.6-19.6,19.6z" fill="currentcolor"></path></svg></a></div>
+
+  <dialog id="clipboard-dialog">
+      <h3>The following text has been copied to the clipboard</h3>
+      <p id="clipboard-text"></p>
+      <div style="text-align: right;">
+        <button id="clipboard-confirm">ok</button>
+      </div>
+  </dialog>
+
+  <!-- Uncomment the following lines for SoundCloud compatibility. Keep commented if you are using native or YouTube -->
+  <!-- iFrame HTML can be found by clicking the embed button while viewing the audio on SoundCloud -->
+  <!-- <script src="https://w.soundcloud.com/player/api.js"></script>
+  <iframe id="hyperplayer" data-player-type="soundcloud" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" 
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/730479133&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+  </iframe> -->
+
+  <!-- Uncomment the following lines for YouTube compatibility. Keep commented if you are using native or SoundCloud -->
+  <!-- <iframe id="hyperplayer" data-player-type="youtube" width="400" height="300" frameborder="no" allow="autoplay"
+    src="https://www.youtube.com/embed/xLcsdc823dg?enablejsapi=1">
+  </iframe> -->
+
+  <div id="hypertranscript" class="hyperaudio-transcript" style="overflow-y:scroll; height:80%; width:100%; position:relative; padding: 8px; font-size: 18pt;">
+    
+    <article>
+ <section>
+  <p>
+    <span data-m="320" data-d="0" style="display: inline;">Stanisław A. Hodorowicz</span>
+    <h1 data-m="320" data-d="500">Wiyrchujmy</h1>
+  </p>
+  <p>
+    <span data-m="2880" data-d="500">P|<sup>ł</sup>owiadajom, </span>
+    <span data-m="3840" data-d="320">co my </span>
+    <span data-m="4160" data-d="500">go<sup>u</sup>ra<sup>o</sup>le </span>
+    <span data-m="5160" data-d="200">na </span>
+    <span data-m="5360" data-d="500">drugik </span>
+    <span data-m="5880" data-d="360">radzi </span>
+    <span data-m="6240" data-d="200">p|<sup>ł</sup>oziyra<sup>o</sup>my </span>
+    <span data-m="6920" data-d="160">z </span>
+    <span data-m="7080" data-d="500">wiyrcha.</span>
+  </p>
+  <p>
+    <span data-m="8800" data-d="1380">Ponoć </span>
+    <span data-m="9300" data-d="240">ty </span>
+    <span data-m="9560" data-d="200"><u>z n</u>a </span>
+    <span data-m="9760" data-d="240">nasyj </span>
+    <span data-m="10270" data-d="840">dziedzinie </span>
+    <span data-m="11210" data-d="500">uwazujemy </span>
+    <span data-m="11350" data-d="280">sie </span>
+    <span data-m="11630" data-d="160">za </span>
+    <span data-m="11790" data-d="500">pnia<sup>o</sup>ki, </span>
+    <span data-m="13100" data-d="500">zaś reśta </span>
+    <span data-m="14580" data-d="160">to </span>
+    <span data-m="14740" data-d="360">ab<sup>ł</sup>o </span>
+    <span data-m="15100" data-d="840">krza<sup>o</sup>ki, </span>
+    <span data-m="15840" data-d="440">ft<sup>ł</sup>ore </span>
+    <span data-m="15980" data-d="500">k<sup>ł</sup>orzynie </span>
+    <span data-m="16540" data-d="500">zapuscajom, </span>
+    <span data-m="17940" data-d="460">ab<sup>ł</sup>o </span>
+    <span data-m="18300" data-d="140">wej </span>
+    <span data-m="18420" data-d="500">pta<sup>o</sup>ki, </span>
+    <span data-m="19380" data-d="280">b<sup>ł</sup>o </span>
+    <span data-m="19660" data-d="160">co </span>
+    <span data-m="19820" data-d="440">ino </span>
+    <span data-m="20260" data-d="1440">prz|ifurgali, </span>
+    <span data-m="21740" data-d="360">aji </span>
+    <span data-m="22100" data-d="280">być </span>
+    <span data-m="22380" data-d="320">m<sup>ł</sup>oze </span>
+    <span data-m="22700" data-d="500">furgnom </span>
+    <span data-m="23220" data-d="500">dalyj. </span>
+  </p>
+  <p>
+    <span data-m="24900" data-d="120">Nie </span>
+    <span data-m="25020" data-d="240">barz </span>
+    <span data-m="25260" data-d="200">sie </span>
+    <span data-m="25460" data-d="160">to </span>
+    <span data-m="25620" data-d="1600">p<sup>ł</sup>onieftorym </span>
+    <span data-m="26420" data-d="500">widzi. </span>
+  </p>
+  <p>
+    <span data-m="28140" data-d="120">Coz </span>
+    <span data-m="28260" data-d="160">na </span>
+    <span data-m="28420" data-d="180">to </span>
+    <span data-m="28690" data-d="180">rzekno<sup>u</sup>nć? </span>
+  </p>
+  <p>
+    <span data-m="31290" data-d="400">Moji </span>
+    <span data-m="31690" data-d="500">kochani, </span>
+    <span data-m="32970" data-d="240">pokiela </span>
+    <span data-m="33209.999999999996" data-d="200">z </span>
+    <span data-m="33410" data-d="160">tym </span>
+    <span data-m="33570" data-d="440">nas·im </span>
+    <span data-m="34010" data-d="500">z wiyrcha </span>
+    <span data-m="34530" data-d="480">dr|ugiymu </span>
+    <span data-m="35010" data-d="500">cł|ek<sup>ł</sup>owi </span>
+    <span data-m="35690" data-d="500">ni|e naćciwia<sup>o</sup>my, </span>
+    <span data-m="36990" data-d="500">t<sup>ł</sup>o ta </span>
+    <span data-m="37790" data-d="500"><sup>j</sup>i d<sup>ł</sup>opusta </span>
+    <span data-m="38350" data-d="160">w </span>
+    <span data-m="38510" data-d="160">tym </span>
+    <span data-m="38670" data-d="240">nijakiego </span>
+    <span data-m="39380" data-d="160">ni </span>
+    <span data-m="39540" data-d="500">ma. </span>
+  </p>
+  <p>
+    <span data-m="40160" data-d="500">Bo i jakiz? </span>
+    <span data-m="41880" data-d="280">Przecie </span>
+    <span data-m="42160" data-d="160">w </span>
+    <span data-m="42320" data-d="200">tym </span>
+    <span data-m="42520" data-d="500">z wiyrcha </span>
+    <span data-m="43040" data-d="360">siedzi </span>
+    <span data-m="43400" data-d="440">nase </span>
+    <span data-m="44360" data-d="3160">ja<sup>o</sup>. Ja<sup>o </sup>s·in, </span>
+    <span data-m="47520" data-d="480">ja<sup>o</sup> dziywce </span>
+    <span data-m="48000" data-d="280">tyj </span>
+    <span data-m="48280" data-d="500">Skalnice, </span>
+    <span data-m="49080" data-d="160">tyj </span>
+    <span data-m="49240" data-d="500">wiyrch<sup>ł</sup>owyj </span>
+    <span data-m="49880" data-d="500">Dziedziny. </span>
+  </p>
+  <p>
+    <span data-m="51240" data-d="200">W </span>
+    <span data-m="51440" data-d="280">tym </span>
+    <span data-m="51720" data-d="280">siedzi </span>
+    <span data-m="52000" data-d="200">tyz</span>
+    <span data-m="52400" data-d="480">p<sup>ł</sup>ot </span>
+    <span data-m="52880" data-d="200">i </span>
+    <span data-m="53080" data-d="500">krwawica </span>
+    <span data-m="53720" data-d="500"><sup>ł</sup>oćco<sup>u</sup>w </span>
+    <span data-m="54840" data-d="240">i </span>
+    <span data-m="55080" data-d="500">dziado<sup>u</sup>w. </span>
+    <span data-m="56000" data-d="500">Siedzom </span>
+    <span data-m="56720" data-d="500">k<sup>ł</sup>orzynie. </span>
+  </p>
+  <p>
+    <span data-m="58230" data-d="120">I </span>
+    <span data-m="58350" data-d="200">to </span>
+    <span data-m="58550" data-d="280">barz </span>
+    <span data-m="58830" data-d="400">dobrze </span>
+    <span data-m="59230" data-d="360">mieć </span>
+    <span data-m="59590" data-d="500">k<sup>ł</sup>orzynie </span>
+    <span data-m="60390" data-d="240">i </span>
+    <span data-m="60630" data-d="320">mieć </span>
+    <span data-m="60950" data-d="240">tyk </span>
+    <span data-m="61190" data-d="500">k<sup>ł</sup>orzyni </span>
+    <span data-m="61830" data-d="500">r<sup>ł</sup>ozumność. </span>
+  </p>
+  <p>
+    <span data-m="63310" data-d="240"><sup>ł</sup>O </span>
+    <span data-m="63550" data-d="320">nik </span>
+    <span data-m="63870" data-d="500">ba<sup>o</sup>c·ić </span>
+    <span data-m="65269.99999999999" data-d="240">i </span>
+    <span data-m="65510.00000000001" data-d="500">utwa<sup>o</sup>rdzać </span>
+    <span data-m="66110" data-d="240">ik </span>
+    <span data-m="66350" data-d="400">swojim </span>
+    <span data-m="66750" data-d="500">z·iciym. </span>
+  </p>
+  <p>
+    <span data-m="68180" data-d="120">I </span>
+    <span data-m="68300" data-d="200">w </span>
+    <span data-m="68500" data-d="500">tym </span>
+    <span data-m="69020" data-d="440">przekonaniu </span>
+    <span data-m="69460" data-d="500">nijakiyj </span>
+    <span data-m="70060" data-d="500">ujmy </span>
+    <span data-m="70900" data-d="200">ni </span>
+    <span data-m="71100" data-d="500">ma. </span>
+  </p>
+  <p>
+    <span data-m="72560" data-d="500">Rzekne, </span>
+    <span data-m="73280" data-d="160">co </span>
+    <span data-m="73440" data-d="240">nie </span>
+    <span data-m="73680" data-d="280">ino </span>
+    <span data-m="73960" data-d="320">ujmy </span>
+    <span data-m="74280" data-d="500">ni ma, </span>
+    <span data-m="75040" data-d="360">ba jes </span>
+    <span data-m="75560" data-d="500">dobro, </span>
+    <span data-m="76160" data-d="240">ft<sup>ł</sup>ore </span>
+    <span data-m="76400" data-d="500">cłek<sup>ł</sup>owi </span>
+    <span data-m="77600" data-d="500">przizwa<sup>o</sup>la<sup>o</sup> </span>
+    <span data-m="78120" data-d="240">sie </span>
+    <span data-m="78360" data-d="500">odnalyźć </span>
+    <span data-m="79480" data-d="200">w </span>
+    <span data-m="79680" data-d="240">tym </span>
+    <span data-m="79920" data-d="500">nas·im </span>
+    <span data-m="80840" data-d="440">wartogłowym </span>
+    <span data-m="82080" data-d="500">dzisiyjs·im </span>
+    <span data-m="82800" data-d="500">świecie. </span>
+  </p>
+  <p>
+    <span data-m="84520" data-d="240">To </span>
+    <span data-m="84760" data-d="240">nase </span>
+    <span data-m="85000" data-d="200">z </span>
+    <span data-m="85200" data-d="400">wiyrcha </span>
+    <span data-m="85600" data-d="400">wz iyno </span>
+    <span data-m="86000" data-d="240">sie </span>
+    <span data-m="86240" data-d="160">nie </span>
+    <span data-m="86400" data-d="200"><sup>ł</sup>od </span>
+    <span data-m="86600" data-d="500">dzisia<sup>o</sup>k. </span>
+  </p>
+  <p>
+    <span data-m="88040" data-d="120">F </span>
+    <span data-m="88160" data-d="360">nim </span>
+    <span data-m="88520" data-d="500">siedzi </span>
+    <span data-m="89040" data-d="500">i t<sup>ł</sup>o, </span>
+    <span data-m="90440" data-d="240">ze </span>
+    <span data-m="90680" data-d="120">ta </span>
+    <span data-m="90800" data-d="480">nasa </span>
+    <span data-m="91280" data-d="500">Skalnica </span>
+    <span data-m="91880" data-d="320">była </span>
+    <span data-m="92200" data-d="280">niby </span>
+    <span data-m="92480" data-d="500">wieża<sup>o</sup> Babel, </span>
+    <span data-m="93800" data-d="200">we </span>
+    <span data-m="94000" data-d="200">ft<sup>ł</sup>oryj </span>
+    <span data-m="94510" data-d="500">sta<sup>o</sup>piały </span>
+    <span data-m="95030" data-d="280">sie </span>
+    <span data-m="95310" data-d="500">zwyki </span>
+    <span data-m="96270" data-d="200">i </span>
+    <span data-m="96470" data-d="160">miysała </span>
+    <span data-m="97150" data-d="500">krew </span>
+    <span data-m="97710" data-d="430">ludo<sup>u</sup>w </span>
+    <span data-m="98180" data-d="280">wselinijakik, </span>
+    <span data-m="100100" data-d="160">a </span>
+    <span data-m="100260" data-d="440">tyz i </span>
+    <span data-m="100700" data-d="500">to, </span>
+    <span data-m="101580" data-d="280">ze </span>
+    <span data-m="101860" data-d="200">to </span>
+    <span data-m="102060" data-d="500">tuta<sup>o</sup>k, </span>
+    <span data-m="103220" data-d="320">jako </span>
+    <span data-m="103540" data-d="500">m<sup>ł</sup>oze nika </span>
+    <span data-m="104340" data-d="500">indziyj, </span>
+    <span data-m="105500" data-d="480">cłek </span>
+    <span data-m="105980" data-d="240">by </span>
+    <span data-m="106220" data-d="500">z·ić, </span>
+    <span data-m="107340" data-d="440">musia<sup>o</sup>ł </span>
+    <span data-m="107780" data-d="500">targać </span>
+    <span data-m="108300" data-d="500">pazdurami </span>
+    <span data-m="109060" data-d="500">przeciwności. </span>
+  </p>
+  <p>
+    <span data-m="110910" data-d="500">S·ićk<sup>ł</sup>o </span>
+    <span data-m="111510" data-d="480">to </span>
+    <span data-m="111990" data-d="500">ryktowało </span>
+    <span data-m="112830" data-d="500">t<sup>ł</sup>o </span>
+    <span data-m="113470" data-d="500">z wiyrcha. </span>
+  </p>
+  <p>
+    <span data-m="115230" data-d="200">My </span>
+    <span data-m="115430" data-d="280">go<sup>u</sup>ra<sup>o</sup>le, </span>
+    <span data-m="116310" data-d="200">jako </span>
+    <span data-m="116510" data-d="160">i </span>
+    <span data-m="116670" data-d="500">s·ićka </span>
+    <span data-m="117190" data-d="500">ludziska, </span>
+    <span data-m="118470" data-d="500">p|<sup>ł</sup>ochybn<sup>ł</sup>ości </span>
+    <span data-m="119430" data-d="500">ma<sup>o</sup>my </span>
+    <span data-m="119950" data-d="500">niemało. </span>
+  </p>
+  <p>
+    <span data-m="121300" data-d="200">No </span>
+    <span data-m="121500" data-d="240">dyć </span>
+    <span data-m="121740" data-d="160">w </span>
+    <span data-m="121900" data-d="280">tym </span>
+    <span data-m="122180" data-d="500">z wiyrcha </span>
+    <span data-m="123620" data-d="260">ja<sup>o</sup> jyj </span>
+    <span data-m="124080" data-d="500">wiera </span>
+    <span data-m="124840" data-d="280">nie </span>
+    <span data-m="125120" data-d="500">widzym. </span>
+  </p>
+  <p>
+    <span data-m="126280" data-d="500">Przeto trza na<sup>o</sup>m </span>
+    <span data-m="127200" data-d="360">wiyrchować </span>
+    <span data-m="128520" data-d="200">i </span>
+    <span data-m="128720" data-d="440">ba<sup>o</sup>c·ić </span>
+    <span data-m="129160" data-d="500">o porzykadle, </span>
+    <span data-m="130320" data-d="160">ft<sup>ł</sup>ore </span>
+    <span data-m="130800" data-d="500">p<sup>ł</sup>owiada<sup>o</sup>: </span>
+    <span data-m="132310" data-d="240">Co </span>
+    <span data-m="132550" data-d="400">ta </span>
+    <span data-m="132950" data-d="500">uwiyrchujes, </span>
+    <span data-m="134550" data-d="360">t<sup>ł</sup>o </span>
+    <span data-m="134910" data-d="500">tw<sup>ł</sup>oje. </span>
+  </p>
+  <p>
+    <span data-m="136430" data-d="500">Wiyrchujmy, </span>
+    <span data-m="137630" data-d="500">by mieć </span>
+    <span data-m="138310" data-d="400">swoje </span>
+    <span data-m="138710" data-d="500">Ja<sup>o</sup>!</span>
+  </p>
+ </section>
+</article>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/gh/hyperaudio/hyperaudio-lite/js/hyperaudio-lite.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/hyperaudio/hyperaudio-lite/js/hyperaudio-lite-extension.js"></script>
+  <!--script src="https://cdn.jsdelivr.net/gh/hyperaudio/hyperaudio-lite/js/caption.js"></script-->
+  <script>
+  // minimizedMode is still experimental - it aims to show the current words in the title, which can be seen on the browser tab.
+  let minimizedMode = false;
+  let autoScroll = true;
+  let doubleClick = false;
+  let webMonetization = true;
+  let playOnClick = false;
+
+  new HyperaudioLite("hypertranscript", "hyperplayer", minimizedMode, autoScroll, doubleClick, webMonetization, playOnClick);
+
+  // Override scroll parameters
+  //ht1.setScrollParameters(<duration>, <delay>, <offset>, <container>);
+
+  // this should create captions  
+  // Ensure caption() is defined or imported before using it.
+  // If caption() is part of hyperaudio-lite-extension.js, make sure the script is loaded and the function is available.
+  if (typeof caption === "function") {
+    let cap1 = caption();
+    cap1.init("hypertranscript", "hyperplayer", '37' , '21'); // transcript Id, player Id, max chars, min chars for caption line
+  } else {
+    console.error("caption() function is not defined. Please check if hyperaudio-lite-extension.js provides it.");
+  }
+  </script>
+</body>
+</html>
